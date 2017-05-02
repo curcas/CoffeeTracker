@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using CoffeeTracker.Web.Filters;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
-namespace CoffeeTracker
+namespace CoffeeTracker.Web
 {
     public class Startup
     {
@@ -28,7 +25,10 @@ namespace CoffeeTracker
         public void ConfigureServices(IServiceCollection services)
         {
             // Add framework services.
-            services.AddMvc();
+            services.AddMvc(options =>
+            {
+                options.Filters.Add(new ModelStateValidationFilter());
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -46,6 +46,8 @@ namespace CoffeeTracker
             {
                 app.UseExceptionHandler("/Home/Error");
             }
+
+            
 
             app.UseStaticFiles();
 

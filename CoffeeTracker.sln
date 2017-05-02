@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26228.4
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoffeeTracker", "CoffeeTracker.csproj", "{C9E5A2BB-F21D-47E8-924E-14D8963C8D78}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoffeeTracker.Web", "src\CoffeeTracker.Web\CoffeeTracker.Web.csproj", "{C9E5A2BB-F21D-47E8-924E-14D8963C8D78}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoffeeTracker.Web.Tests", "src\CoffeeTracker.Web.Tests\CoffeeTracker.Web.Tests.csproj", "{D095B2C4-9877-4F7E-B206-F712CE2DFFD8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{C9E5A2BB-F21D-47E8-924E-14D8963C8D78}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C9E5A2BB-F21D-47E8-924E-14D8963C8D78}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C9E5A2BB-F21D-47E8-924E-14D8963C8D78}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D095B2C4-9877-4F7E-B206-F712CE2DFFD8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D095B2C4-9877-4F7E-B206-F712CE2DFFD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D095B2C4-9877-4F7E-B206-F712CE2DFFD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D095B2C4-9877-4F7E-B206-F712CE2DFFD8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
