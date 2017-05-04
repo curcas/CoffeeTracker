@@ -1,6 +1,8 @@
-﻿using CoffeeTracker.Web.Filters;
+﻿using CoffeeTracker.Web.Database;
+using CoffeeTracker.Web.Filters;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -29,6 +31,9 @@ namespace CoffeeTracker.Web
             {
                 options.Filters.Add(new ModelStateValidationFilter());
             });
+
+            services.AddEntityFrameworkNpgsql()
+                .AddDbContext<CoffeeTrackerDbContext>(options => options.UseNpgsql(Configuration.GetConnectionString("DefaultConnectionString")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -46,8 +51,6 @@ namespace CoffeeTracker.Web
             {
                 app.UseExceptionHandler("/Home/Error");
             }
-
-            
 
             app.UseStaticFiles();
 
